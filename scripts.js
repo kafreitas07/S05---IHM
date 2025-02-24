@@ -12,7 +12,7 @@ const armarios = [
   { id: 7, formato: "duplo", status: false, acessivel: true },
   { id: 8, formato: "duplo", status: false, acessivel: true },  
 ];
-// ok
+
 
 // função para reserva do armário, incluindo as regras.
 function reservarArmario() {
