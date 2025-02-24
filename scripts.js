@@ -36,7 +36,7 @@ function reservarArmario() {
 
   // Calcular a data e hora de entrega (24 horas após a reserva).
   const DataParaEntrega = new Date(ReservaData.getTime() + 24 * 60 * 60 * 1000); 
-  armarioSorteado.DataParaentrega = DataParaEntrega.toLocaleString("pt-BR");
+  armarioSorteado.DataParaEntrega = DataParaEntrega.toLocaleString("pt-BR");
 
   // Atualizar o status do armário para indisponível.
   armarioSorteado.status = false;
