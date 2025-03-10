@@ -1,0 +1,89 @@
+/* Resetando algumas propriedades do navegador */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Estilização da estrutura principal */
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+  }
+  
+  /* Cabeçalho */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    background-color: #4A90E2; /* Azul para o cabeçalho */
+    color: white;
+  }
+  
+  header .logo {
+    font-size: 1.5em;
+    font-weight: bold;
+  }
+  
+  nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 16px;
+    font-size: 1em;
+  }
+  
+  nav a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Barra de navegação - no caso já dentro do cabeçalho */
+  nav {
+    display: flex;
+  }
+  
+  /* Conteúdo principal */
+  main {
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+  }
+  
+  .metrics {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 16px;
+    background-color: #ffffff; /* Cor de fundo para o conteúdo */
+    padding: 16px;
+    border-radius: 8px;
+  }
+  
+  .metric-item {
+    background-color: #f2f2f2;
+    padding: 16px;
+    border-radius: 8px;
+    text-align: center;
+  }
+  
+  /* Rodapé */
+  footer {
+    background-color: #333;
+    color: white;
+    padding: 16px;
+    text-align: center;
+  }
+  
+  footer nav {
+    margin-top: 8px;
+  }
+  
+  footer nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 8px;
+  }
+  
+  footer nav a:hover {
+    text-decoration: underline;
+  }
+  
