@@ -3,49 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard App Inatel</title>
+    <title>INATEL - Dashboard</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined">
 </head>
 <body>
     <header>
-        <div class="icons">&#9776;</div>
-        <div class="logo">Logo</div>
-        <div class="icons">&#9881;</div>
+        <!-- Botão de Menu para abrir a seleção de tema -->
+        <span class="icon" id="menu-toggle">menu</span>
+        <h1>Inatel Dashboard</h1>
+        <span class="icon">account_circle</span>
     </header>
-    
-    <section class="mensagens">
-        <h2>Bem vindo Kaik!</h2>
-        <p>Você possui um armário reservado com entrega para hoje...</p>
-        <p>Você possui uma pendência no financeiro...</p>
-    </section>
-    
+
+    <!-- Menu suspenso de seleção de tema, inicialmente escondido -->
+    <div id="theme-menu" class="theme-menu">
+        <label for="theme-selector">Escolher Tema:</label>
+        <select id="theme-selector" aria-label="Selecione o tema">
+            <option value="default-theme">Padrão</option>
+            <option value="dark-theme">Escuro</option>
+            <option value="blue-theme">Azul</option>
+        </select>
+    </div>
+
+    <div class="mensagens">
+        <h2>Bem vindo, Kaik!</h2>
+        <p><span class="icon">info</span> Você possui um armário reservado com entrega para hoje.</p>
+        <p><span class="icon">warning</span> Você possui pendências.</p>
+    </div>
+
     <main>
-        <section class="aulas">
-            <h2>Disciplina</h2>
+        <div class="aulas">
+            <h3>Disciplina</h3>
             <p>Sala e Horário</p>
-            <div class="icons">&#9993; &#128197; &#128206;</div>
-        </section>
-        
-        <section class="aulas">
-            <h2>Disciplina</h2>
+            <span class="icon">schedule</span>
+        </div>
+        <div class="aulas">
+            <h3>Disciplina</h3>
             <p>Sala e Horário</p>
-            <div class="icons">&#9993; &#128197; &#128206;</div>
-        </section>
-        
-        <section class="aulas">
-            <h2>Disciplina</h2>
+            <span class="icon">schedule</span>
+        </div>
+        <div class="aulas">
+            <h3>Disciplina</h3>
             <p>Sala e Horário</p>
-            <div class="icons">&#9993; &#128197; &#128206;</div>
-        </section>
+            <span class="icon">schedule</span>
+        </div>
     </main>
-    
-    <section class="noticias">
-        <h2>Card de Notícias</h2>
+
+    <div class="noticias">
+        <h3>Card de Notícias</h3>
         <p>Subtítulo</p>
-    </section>
-    
+    </div>
+
     <footer>
         <p>&copy; 2025 Inatel. Todos os direitos reservados.</p>
     </footer>
+
+    <script src="scripts.js"></script>
 </body>
 </html>

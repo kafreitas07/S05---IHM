@@ -1,73 +1,107 @@
-body {
-    font-family: Arial, sans-serif;
+/* Resetando estilos para garantir uma base limpa */
+* {
     margin: 0;
     padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #f2f2f2;
-    width: 100%;
     box-sizing: border-box;
 }
 
+/* Estilos básicos do body */
+body {
+    font-family: 'Arimo', sans-serif;
+    font-size: 16px;
+    background-color: #f4f4f4;
+    color: #333;
+    padding: 16px;
+}
+
+/* Estilo para o cabeçalho */
 header {
+    padding: 16px;
+    background-color: #0066B3;
+    color: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: calc(100% - 32px);
-    padding: 16px;
-    background-color: #0012da;
-    color: white;
-    box-sizing: border-box;
-    margin: 16px;
-}
-
-.mensagens, .noticias, main {
-    width: calc(100% - 32px);
-    padding: 16px;
-    margin: 16px auto;
     border-radius: 8px;
-    box-sizing: border-box;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.mensagens {
-    background-color: #dff0d8;
+/* Estilo para o título */
+h1 {
+    font-size: 24px;
 }
 
-main {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 16px;
-    background-color: #e0e0e0;
+/* Estilo dos ícones */
+.icon {
+    font-family: 'Material Icons Outlined';
+    font-size: 24px;
+    color: inherit;
+    display: inline-block;
+    vertical-align: middle;
+    cursor: pointer; /* O cursor vira uma mãozinha para indicar interatividade */
 }
 
-.aulas {
-    background-color: #ffffff;
+/* Estilo do Menu de Seleção de Tema */
+.theme-menu {
+    display: none; /* Inicialmente escondido */
+    position: absolute;
+    top: 60px; /* Ajuste conforme a altura do header */
+    left: 16px;
     padding: 16px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-    box-sizing: border-box;
+    z-index: 1000; /* Para garantir que o menu fique acima de outros elementos */
 }
 
-.noticias {
-    background-color: #ddd;
+/* Tema Padrão */
+.default-theme {
+    background-color: #f4f4f4;
+    color: #333;
 }
 
-footer {
-    width: calc(100% - 32px);
-    text-align: center;
-    padding: 16px;
-    background-color: #333;
+.default-theme header, .default-theme footer {
+    background-color: #0066B3;
+}
+
+/* Tema Escuro */
+.dark-theme {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+.dark-theme header, .dark-theme footer {
+    background-color: #1f1f1f;
+}
+
+.dark-theme .mensagens, .dark-theme .noticias, .dark-theme .aulas {
+    background-color: #333333;
+}
+
+/* Tema Azul */
+.blue-theme {
+    background-color: #007BFF;
     color: white;
-    margin: 16px auto;
-    box-sizing: border-box;
 }
 
-@media (min-width: 768px) {
-    main {
-        grid-template-columns: repeat(2, 1fr);
+.blue-theme header, .blue-theme footer {
+    background-color: #0056b3;
+}
+
+.blue-theme .mensagens, .blue-theme .noticias, .blue-theme .aulas {
+    background-color: #3399FF;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 896px) {
+    body {
+        padding: 16px 8px;
     }
-    .noticias {
-        grid-column: span 2;
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .aulas {
+        grid-template-columns: 1fr;
     }
 }
