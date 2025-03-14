@@ -1,57 +1,57 @@
-/* Resetando estilos para garantir uma base limpa */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Estilos básicos do body */
+
 body {
     font-family: 'Arimo', sans-serif;
     font-size: 16px;
     background-color: #f4f4f4;
     color: #333;
-    padding: 16px;
+    padding: 32px; 
 }
 
-/* Estilo para o cabeçalho */
+
 header {
-    padding: 16px;
+    padding: 32px;
     background-color: #0066B3;
     color: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 24px; 
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Estilo para o título */
 h1 {
     font-size: 24px;
 }
 
-/* Estilo dos ícones */
+
 .icon {
     font-family: 'Material Icons Outlined';
     font-size: 24px;
     color: inherit;
     display: inline-block;
     vertical-align: middle;
-    cursor: pointer; /* O cursor vira uma mãozinha para indicar interatividade */
+    cursor: pointer;
 }
 
-/* Estilo do Menu de Seleção de Tema */
 .theme-menu {
-    display: none; /* Inicialmente escondido */
+    display: none;
     position: absolute;
-    top: 60px; /* Ajuste conforme a altura do header */
+    top: 60px;
     left: 16px;
-    padding: 16px;
+    padding: 24px;
     background-color: white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
-    z-index: 1000; /* Para garantir que o menu fique acima de outros elementos */
+    z-index: 1000;
+    margin-top: 16px;
 }
 
 /* Tema Padrão */
@@ -92,15 +92,34 @@ h1 {
     background-color: #3399FF;
 }
 
-/* Responsividade para telas menores */
+.mensagens, .noticias, .aulas {
+    margin-bottom: 32px; 
+}
+
+/* Layout das aulas */
+.aulas {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 32px; 
+}
+
+/* Rodapé */
+footer {
+    padding: 32px 0; 
+    text-align: center;
+}
+
+
 @media (max-width: 896px) {
     body {
-        padding: 16px 8px;
+        padding: 32px 16px;
     }
+
     header {
         flex-direction: column;
         align-items: flex-start;
     }
+
     .aulas {
         grid-template-columns: 1fr;
     }
