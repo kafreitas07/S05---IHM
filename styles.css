@@ -1,19 +1,16 @@
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-
 body {
     font-family: 'Arimo', sans-serif;
     font-size: 16px;
     background-color: #f4f4f4;
     color: #333;
-    padding: 32px; 
+    padding: 32px;
 }
-
 
 header {
     padding: 32px;
@@ -22,7 +19,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 24px; 
+    gap: 24px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -30,7 +27,6 @@ header {
 h1 {
     font-size: 24px;
 }
-
 
 .icon {
     font-family: 'Material Icons Outlined';
@@ -54,7 +50,7 @@ h1 {
     margin-top: 16px;
 }
 
-/* Tema Padrão */
+
 .default-theme {
     background-color: #f4f4f4;
     color: #333;
@@ -93,22 +89,116 @@ h1 {
 }
 
 .mensagens, .noticias, .aulas {
-    margin-bottom: 32px; 
+    margin-bottom: 32px;
 }
 
 /* Layout das aulas */
 .aulas {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 32px; 
+    gap: 32px;
 }
 
 /* Rodapé */
 footer {
-    padding: 32px 0; 
+    padding: 32px 0;
     text-align: center;
 }
 
+.carousel-container {
+    position: relative;
+    overflow: hidden;
+    background-color: white;
+    border-radius: 10px;
+    margin: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.card {
+    min-width: 100%;
+    text-align: center;
+}
+
+.card img {
+    width: 100%;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+.info {
+    padding: 10px;
+    color: #333;
+}
+
+/* Tema Padrão */
+.default-theme .info {
+    color: #333;
+}
+
+.default-theme .carousel-container {
+    background-color: #fff; 
+}
+
+.default-theme .card {
+    background-color: #fff; 
+}
+
+.default-theme .card img {
+    filter: brightness(0.9); 
+}
+
+/* Tema Escuro */
+.dark-theme .info {
+    color: #e0e0e0; 
+}
+
+.dark-theme .carousel-container {
+    background-color: #333; 
+}
+
+.dark-theme .card {
+    background-color: #444; 
+}
+
+.dark-theme .card img {
+    filter: brightness(1.1); 
+}
+
+.blue-theme .info {
+    color: #fff; 
+}
+
+.blue-theme .carousel-container {
+    background-color: #0056b3; 
+}
+
+.blue-theme .card {
+    background-color: #3399FF; 
+}
+
+.blue-theme .card img {
+    filter: brightness(0.8);
+}
+
+button {
+    position: absolute;
+    top: 30%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 10px;
+}
+
+#prevBtn { left: 10px; }
+#nextBtn { right: 10px; }
 
 @media (max-width: 896px) {
     body {
