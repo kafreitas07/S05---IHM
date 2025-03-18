@@ -22,7 +22,6 @@ document.addEventListener("DOMContentLoaded", () => {
         themeMenu.style.display = "none";
     });
 
-
     const eventos = [
         {
             id: 1,
@@ -69,7 +68,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const carousel = document.querySelector('.carousel');
     let currentIndex = 0;
 
-   
     eventos.forEach(evento => {
         const card = document.createElement('div');
         card.classList.add('card');
@@ -83,6 +81,7 @@ document.addEventListener("DOMContentLoaded", () => {
         `;
         carousel.appendChild(card);
     });
+
     const prevBtn = document.getElementById('prevBtn');
     const nextBtn = document.getElementById('nextBtn');
 
@@ -91,16 +90,12 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     prevBtn.addEventListener('click', () => {
-        if (currentIndex > 0) {
-            currentIndex--;
-            updateCarousel();
-        }
+        currentIndex = (currentIndex - 1 + eventos.length) % eventos.length; // Loop para o último item
+        updateCarousel();
     });
 
     nextBtn.addEventListener('click', () => {
-        if (currentIndex < eventos.length - 1) {
-            currentIndex++;
-            updateCarousel();
-        }
+        currentIndex = (currentIndex + 1) % eventos.length; // Loop para o primeiro item
+        updateCarousel();
     });
 });

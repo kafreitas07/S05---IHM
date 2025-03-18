@@ -10,6 +10,7 @@ body {
     background-color: #f4f4f4;
     color: #333;
     padding: 32px;
+    transition: background-color 0.3s, color 0.3s; /* Transição suave para troca de temas */
 }
 
 header {
@@ -50,7 +51,7 @@ h1 {
     margin-top: 16px;
 }
 
-
+/* Tema Padrão */
 .default-theme {
     background-color: #f4f4f4;
     color: #333;
@@ -122,6 +123,11 @@ footer {
 .card {
     min-width: 100%;
     text-align: center;
+    transition: transform 0.3s ease-in-out; /* Suavizar a interação */
+}
+
+.card:hover {
+    transform: scale(1.05); /* Efeito de hover nos cards */
 }
 
 .card img {
@@ -194,7 +200,8 @@ button {
     border: none;
     padding: 10px;
     cursor: pointer;
-    font-size: 10px;
+    font-size: 16px;
+    border-radius: 5px; /* Adicionando bordas arredondadas aos botões */
 }
 
 #prevBtn { left: 10px; }
@@ -212,5 +219,25 @@ button {
 
     .aulas {
         grid-template-columns: 1fr;
+    }
+
+    .carousel-container {
+        margin: 10px;
+    }
+
+    button {
+        font-size: 14px; /* Ajuste do tamanho da fonte do botão em telas menores */
+        padding: 12px;
+    }
+}
+
+@media (max-width: 600px) {
+    .carousel-container {
+        margin: 5px;
+    }
+    
+    button {
+        font-size: 12px;
+        padding: 10px;
     }
 }
