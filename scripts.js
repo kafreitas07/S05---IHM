@@ -1,13 +1,13 @@
 document.addEventListener("DOMContentLoaded", () => {
     const menuToggle = document.getElementById("menu-toggle");
-    const themeMenu = document.getElementById("theme-menu"); 
-    const themeSelector = document.getElementById("theme-selector"); 
+    const themeMenu = document.getElementById("theme-menu");
+    const themeSelector = document.getElementById("theme-selector");
     const body = document.body;
 
     const savedTheme = localStorage.getItem("theme");
     if (savedTheme) {
         body.classList.add(savedTheme);
-        themeSelector.value = savedTheme;  
+        themeSelector.value = savedTheme;
     }
 
     menuToggle.addEventListener("click", () => {
@@ -90,12 +90,28 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     prevBtn.addEventListener('click', () => {
-        currentIndex = (currentIndex - 1 + eventos.length) % eventos.length; // Loop para o último item
+        currentIndex = (currentIndex - 1 + eventos.length) % eventos.length;
         updateCarousel();
     });
 
     nextBtn.addEventListener('click', () => {
-        currentIndex = (currentIndex + 1) % eventos.length; // Loop para o primeiro item
+        currentIndex = (currentIndex + 1) % eventos.length;
         updateCarousel();
+    });
+
+    let autoSlide = setInterval(() => {
+        currentIndex = (currentIndex + 1) % eventos.length;
+        updateCarousel();
+    }, 5000);
+
+    carousel.addEventListener('mouseover', () => {
+        clearInterval(autoSlide);
+    });
+
+    carousel.addEventListener('mouseout', () => {
+        autoSlide = setInterval(() => {
+            currentIndex = (currentIndex + 1) % eventos.length;
+            updateCarousel();
+        }, 5000);
     });
 });
