@@ -51,6 +51,8 @@ h1 {
     margin-top: 16px;
 }
 
+/* Alteração dos temas */
+
 .default-theme {
     background-color: #f4f4f4;
     color: #333;
@@ -76,6 +78,19 @@ h1 {
     filter: brightness(0.9);
 }
 
+/* Estilos de nota */
+.lable-nota {
+    padding: 8px;
+    border-radius: 5px;
+    color: white;
+    display: inline-block;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 12px; /* Espaço entre a nota e as informações */
+}
+
+/* Outros estilos dos temas */
+
 .dark-theme {
     background-color: #121212;
     color: #e0e0e0;
@@ -83,10 +98,6 @@ h1 {
 
 .dark-theme header, .dark-theme footer {
     background-color: #1f1f1f;
-}
-
-.dark-theme .mensagens, .dark-theme .noticias, .dark-theme .aulas {
-    background-color: #333333;
 }
 
 .dark-theme .info {
@@ -114,10 +125,6 @@ h1 {
     background-color: #0056b3;
 }
 
-.blue-theme .mensagens, .blue-theme .noticias, .blue-theme .aulas {
-    background-color: #3399FF;
-}
-
 .blue-theme .info {
     color: #fff;
 }
@@ -134,19 +141,26 @@ h1 {
     filter: brightness(0.8);
 }
 
-.mensagens, .noticias, .aulas {
-    margin-bottom: 32px;
-}
+/* Estilos gerais para o carrossel e card */
 
-.aulas {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 32px;
-}
-
-footer {
-    padding: 32px 0;
+.card {
+    min-width: 100%;
     text-align: center;
+    transition: transform 0.3s ease-in-out;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card img {
+    width: 100%;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+.card .info {
+    margin-top: 12px; /* Espaço entre a imagem e as informações */
 }
 
 .carousel-container {
@@ -161,27 +175,6 @@ footer {
 .carousel {
     display: flex;
     transition: transform 0.5s ease-in-out;
-}
-
-.card {
-    min-width: 100%;
-    text-align: center;
-    transition: transform 0.3s ease-in-out;
-}
-
-.card:hover {
-    transform: scale(1.05);
-}
-
-.card img {
-    width: 100%;
-    border-top-right-radius: 10px;
-    border-top-left-radius: 10px;
-}
-
-.info {
-    padding: 10px;
-    color: #333;
 }
 
 button {
@@ -200,37 +193,7 @@ button {
 #prevBtn { left: 10px; }
 #nextBtn { right: 10px; }
 
-@media (max-width: 896px) {
-    body {
-        padding: 32px 16px;
-    }
-
-    header {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .aulas {
-        grid-template-columns: 1fr;
-    }
-
-    .carousel-container {
-        margin: 10px;
-    }
-
-    button {
-        font-size: 14px;
-        padding: 12px;
-    }
-}
-
-@media (max-width: 600px) {
-    .carousel-container {
-        margin: 5px;
-    }
-
-    button {
-        font-size: 12px;
-        padding: 10px;
-    }
+footer {
+    padding: 32px 0;
+    text-align: center;
 }

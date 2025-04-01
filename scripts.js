@@ -31,7 +31,8 @@ document.addEventListener("DOMContentLoaded", () => {
             location: 'Salão de Eventos',
             type: 'tech',
             description: 'Uma semana inteira dedicada à tecnologia e inovação, com palestras, workshops e hackathons.',
-            image: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&q=80&w=800&h=400'
+            image: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&q=80&w=800&h=400',
+            nota: 9
         },
         {
             id: 2,
@@ -41,7 +42,8 @@ document.addEventListener("DOMContentLoaded", () => {
             location: 'Laboratório CS&I',
             type: 'tech',
             description: 'Workshop prático sobre Internet das Coisas e suas aplicações na indústria 4.0.',
-            image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800&h=400'
+            image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800&h=400',
+            nota: 5
         },
         {
             id: 3,
@@ -51,7 +53,8 @@ document.addEventListener("DOMContentLoaded", () => {
             location: 'Área Esportiva do Inatel',
             type: 'cultural',
             description: 'Venha comemorar a melhor Festa dos Alunos de todos os tempos!',
-            image: 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&q=80&w=800&h=400'
+            image: 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&q=80&w=800&h=400',
+            nota: 7
         },
         {
             id: 4,
@@ -61,7 +64,8 @@ document.addEventListener("DOMContentLoaded", () => {
             location: 'Salão de Eventos',
             type: 'academic',
             description: 'Venha conhecer empresas e projetos com destaque na área da engenharia.',
-            image: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=800&h=400'
+            image: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=800&h=400',
+            nota: 8
         }
     ];
 
@@ -71,12 +75,26 @@ document.addEventListener("DOMContentLoaded", () => {
     eventos.forEach(evento => {
         const card = document.createElement('div');
         card.classList.add('card');
+        
+        // Lógica para mudar a cor da nota
+        let notaCor = '';
+        if (evento.nota < 6) {
+            notaCor = 'red'; // vermelho para nota menor que 6
+        } else if (evento.nota >= 6 && evento.nota < 8) {
+            notaCor = 'orange'; // laranja para nota entre 6 e 8
+        } else {
+            notaCor = 'green'; // verde para nota 8 ou maior
+        }
+
         card.innerHTML = `
             <img src="${evento.image}" alt="${evento.title}">
             <div class="info">
                 <h3>${evento.title}</h3>
                 <p>${evento.description}</p>
                 <small>${evento.date} - ${evento.time} - ${evento.location}</small>
+                <div class="lable-nota" style="background-color: ${notaCor};">
+                    Nota: <b>${evento.nota}</b>
+                </div>
             </div>
         `;
         carousel.appendChild(card);

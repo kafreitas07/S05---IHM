@@ -13,6 +13,8 @@
         <h1>Inatel Dashboard</h1>
         <span class="icon">account_circle</span>
     </header>
+
+    <!-- Menu de Seleção de Tema -->
     <div id="theme-menu" class="theme-menu">
         <label for="theme-selector">Escolher Tema:</label>
         <select id="theme-selector" aria-label="Selecione o tema">
@@ -22,12 +24,14 @@
         </select>
     </div>
 
+    <!-- Mensagens de Boas-Vindas -->
     <div class="mensagens">
         <h2>Bem-vindo, Kaik!</h2>
         <p><span class="icon">info</span> Você possui um armário reservado com entrega para hoje.</p>
         <p><span class="icon">warning</span> Você possui pendências.</p>
     </div>
 
+    <!-- Seção Principal de Aulas (Esta parte pode ser preenchida dinamicamente via JS) -->
     <main>
         <div class="aulas">
             <h3>Disciplina</h3>
@@ -46,17 +50,19 @@
         </div>
     </main>
 
+    <!-- Carrossel de Eventos -->
     <div class="carousel-container">
-        <div class="carousel">
-        </div>
+        <div class="carousel"></div> <!-- Os eventos serão injetados aqui pelo JS -->
         <button id="prevBtn">❮</button>
         <button id="nextBtn">❯</button>
     </div>
 
+    <!-- Rodapé -->
     <footer>
         <p>&copy; 2025 Inatel. Todos os direitos reservados.</p>
     </footer>
 
+    <!-- Script JS -->
     <script src="scripts.js"></script>
 </body>
 </html>
