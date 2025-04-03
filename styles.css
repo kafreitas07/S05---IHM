@@ -1,3 +1,4 @@
+
 * {
     margin: 0;
     padding: 0;
@@ -51,7 +52,6 @@ h1 {
     margin-top: 16px;
 }
 
-/* Alteração dos temas */
 
 .default-theme {
     background-color: #f4f4f4;
@@ -78,7 +78,7 @@ h1 {
     filter: brightness(0.9);
 }
 
-/* Estilos de nota */
+
 .lable-nota {
     padding: 8px;
     border-radius: 5px;
@@ -86,10 +86,10 @@ h1 {
     display: inline-block;
     text-align: center;
     font-weight: bold;
-    margin-top: 12px; /* Espaço entre a nota e as informações */
+    margin-top: 12px; 
 }
 
-/* Outros estilos dos temas */
+
 
 .dark-theme {
     background-color: #121212;
@@ -141,7 +141,7 @@ h1 {
     filter: brightness(0.8);
 }
 
-/* Estilos gerais para o carrossel e card */
+
 
 .card {
     min-width: 100%;
@@ -160,7 +160,7 @@ h1 {
 }
 
 .card .info {
-    margin-top: 12px; /* Espaço entre a imagem e as informações */
+    margin-top: 12px; 
 }
 
 .carousel-container {
@@ -170,6 +170,7 @@ h1 {
     border-radius: 10px;
     margin: 20px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%; 
 }
 
 .carousel {
@@ -196,4 +197,49 @@ button {
 footer {
     padding: 32px 0;
     text-align: center;
+}
+.titulo-nota {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.titulo-evento {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+    flex: 1;
+    text-align: left;
+}
+
+.lable-nota {
+    padding: 6px 12px;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    white-space: nowrap;
+}
+.aulas {
+    padding: 16px;
+    margin-bottom: 16px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.05);
+}
+
+.default-theme .aulas {
+    background-color: #fff;
+    color: #333;
+}
+
+.dark-theme .aulas {
+    background-color: #1f1f1f;
+    color: #e0e0e0;
+}
+
+.blue-theme .aulas {
+    background-color: #3399FF;
+    color: white;
 }

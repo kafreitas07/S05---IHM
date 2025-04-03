@@ -75,30 +75,31 @@ document.addEventListener("DOMContentLoaded", () => {
     eventos.forEach(evento => {
         const card = document.createElement('div');
         card.classList.add('card');
-        
-        // Lógica para mudar a cor da nota
+    
         let notaCor = '';
         if (evento.nota < 6) {
-            notaCor = 'red'; // vermelho para nota menor que 6
+            notaCor = 'red';
         } else if (evento.nota >= 6 && evento.nota < 8) {
-            notaCor = 'orange'; // laranja para nota entre 6 e 8
+            notaCor = 'orange';
         } else {
-            notaCor = 'green'; // verde para nota 8 ou maior
+            notaCor = 'green';
         }
-
+    
         card.innerHTML = `
-            <img src="${evento.image}" alt="${evento.title}">
-            <div class="info">
-                <h3>${evento.title}</h3>
-                <p>${evento.description}</p>
-                <small>${evento.date} - ${evento.time} - ${evento.location}</small>
-                <div class="lable-nota" style="background-color: ${notaCor};">
-                    Nota: <b>${evento.nota}</b>
-                </div>
-            </div>
-        `;
+    <img src="${evento.image}" alt="${evento.title}">
+    <div class="info">
+        <div class="titulo-nota">
+            <h3 class="titulo-evento">${evento.title}</h3>
+        </div>
+        <p>${evento.description}</p>
+        <small>${evento.date} - ${evento.time} - ${evento.location}</small>
+    </div>
+`;
+
         carousel.appendChild(card);
     });
+    
+    
 
     const prevBtn = document.getElementById('prevBtn');
     const nextBtn = document.getElementById('nextBtn');
@@ -132,4 +133,66 @@ document.addEventListener("DOMContentLoaded", () => {
             updateCarousel();
         }, 5000);
     });
+});
+const aulas = [
+    {
+        id: 1,
+        disciplina: "S05 - Interface Homem-máquina",
+        data: "ter",
+        horario: "10:00",
+        local: "P1-S17",
+        prova_alert: false,
+        prova: "12/05",
+        frequencia: "10/25",
+        nota: "9"
+    },
+    {
+        id: 2,
+        disciplina: "E01 - Circuitos Elétricos em Corrente Contínua",
+        data: "ter",
+        horario: "10:00",
+        local: "P1-S17",
+        prova_alert: true,
+        prova: "12/05",
+        frequencia: "10/25",
+        nota: "5"
+    },
+    {
+        id: 3,
+        disciplina: "M02 - Álgebra e Geometria Analítica",
+        data: "ter",
+        horario: "10:00",
+        local: "P1-S17",
+        prova_alert: true,
+        prova: "12/05",
+        frequencia: "10/25",
+        nota: "7"
+    }
+];
+
+const aulasContainer = document.getElementById("aulas-container");
+
+aulas.forEach((aula) => {
+    const aulaDiv = document.createElement("div");
+    aulaDiv.classList.add("aulas");
+
+    let notaCor = '';
+    const nota = parseFloat(aula.nota);
+    if (nota < 6) notaCor = 'red';
+    else if (nota >= 6 && nota < 8) notaCor = 'orange';
+    else notaCor = 'green';
+
+    aulaDiv.innerHTML = `
+        <div class="titulo-nota">
+            <h3 class="titulo-evento">${aula.disciplina}</h3>
+            <div class="lable-nota" style="background-color: ${notaCor};">
+                Nota: <b>${aula.nota}</b>
+            </div>
+        </div>
+        <p><span class="icon">schedule</span> ${aula.data} - ${aula.horario} (${aula.local})</p>
+        <p><span class="icon">assignment</span> Frequência: ${aula.frequencia}</p>
+        ${aula.prova_alert ? `<p><span class="icon">warning</span> Prova em ${aula.prova}</p>` : ""}
+    `;
+
+    aulasContainer.appendChild(aulaDiv);
 });
