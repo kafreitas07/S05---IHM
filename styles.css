@@ -437,13 +437,15 @@ footer {
     }
 
     .estagio-busca button {
-        width: 100%;
-        padding: 12px;
+        width: auto; /* Não ocupa toda a largura */
+        padding: 8px 16px;
+        min-width: 120px; /* Botão proporcional */
     }
 
     #ver-todos-estagios {
-        width: 100%;
-        padding: 12px;
+        width: auto;
+        padding: 8px 16px;
+        min-width: 120px; /* Garantindo tamanho proporcional */
     }
 }
 
