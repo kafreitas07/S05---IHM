@@ -1,54 +1,63 @@
-    <!DOCTYPE html>
-    <html lang="pt-BR">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>INATEL - Dashboard</title>
-        <link rel="stylesheet" href="styles.css">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined">
-    </head>
-    <body>
-        <header>
-            <span class="icon" id="menu-toggle">menu</span>
-            <h1>Inatel Dashboard</h1>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INATEL - Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined">
+</head>
+<body>
+    <header>
+        <span class="icon" id="menu-toggle">menu</span>
+        <h1>Inatel Dashboard</h1>
+        <div class="header-buttons">
+            <span id="estagios-toggle" class="icon">work_outline</span>
             <span class="icon">account_circle</span>
-        </header>
-
-
-        <div id="theme-menu" class="theme-menu">
-            <label for="theme-selector">Escolher Tema:</label>
-            <select id="theme-selector" aria-label="Selecione o tema">
-                <option value="default-theme">Padrão</option>
-                <option value="dark-theme">Escuro</option>
-                <option value="blue-theme">Azul</option>
-            </select>
         </div>
+    </header>
 
-    
-        <div class="mensagens">
-            <h2>Bem-vindo, Kaik!</h2>
-            <p><span class="icon">info</span> Você possui um armário reservado com entrega para hoje.</p>
-            <p><span class="icon">warning</span> Você possui pendências.</p>
+    <div id="theme-menu" class="theme-menu">
+        <label for="theme-selector">Escolher Tema:</label>
+        <select id="theme-selector" aria-label="Selecione o tema">
+            <option value="default-theme">Padrão</option>
+            <option value="dark-theme">Escuro</option>
+            <option value="blue-theme">Azul</option>
+        </select>
+    </div>
+
+    <!-- Área de busca de estágios -->
+    <div id="estagios-area" class="estagios-area">
+        <h2>Buscar Estágios no Inatel</h2>
+        <div class="estagio-busca">
+            <input type="text" id="estagio-input" placeholder="Digite a área de estágio...">
+            <button id="estagio-busca-btn">Buscar</button>
         </div>
+        <div id="resultados" class="resultados"></div>
 
-        <main id="aulas-container">
-        
+        <!-- Botão para ver todos os estágios -->
+        <button id="ver-todos-estagios" class="btn-ver-todos">Ver Todos os Estágios</button>
+    </div>
 
-        </main>
+    <div class="mensagens">
+        <h2>Bem-vindo, Kaik!</h2>
+        <p><span class="icon">info</span> Você possui um armário reservado com entrega para hoje.</p>
+        <p><span class="icon">warning</span> Você possui pendências.</p>
+    </div>
 
-      
-        <div class="carousel-container">
-            <div class="carousel"></div> 
-            <button id="prevBtn">❮</button>
-            <button id="nextBtn">❯</button>
-        </div>
+    <main id="aulas-container">
+    </main>
 
+    <div class="carousel-container">
+        <div class="carousel"></div> 
+        <button id="prevBtn">❮</button>
+        <button id="nextBtn">❯</button>
+    </div>
 
-        <footer>
-            <p>&copy; 2025 Inatel. Todos os direitos reservados.</p>
-        </footer>
+    <footer>
+        <p>&copy; 2025 Inatel. Todos os direitos reservados.</p>
+    </footer>
 
-      
-        <script src="scripts.js"></script>
-    </body>
-    </html>
+    <script src="scripts.js"></script>
+</body>
+</html>

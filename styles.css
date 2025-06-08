@@ -1,3 +1,42 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arimo', sans-serif;
+    font-size: 16px;
+    background-color: #f4f4f4;
+    color: #333;
+    padding: 32px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+header {
+    padding: 32px;
+    background-color: #0066B3;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 24px;
+}
+
+.icon {
+    font-family: 'Material Icons Outlined';
+    font-size: 24px;
+    color: inherit;
+    display: inline-block;
+    vertical-align: middle;
+    cursor: pointer;
+}
 
 * {
     margin: 0;
@@ -39,20 +78,177 @@ h1 {
     cursor: pointer;
 }
 
+/* Ajuste da posição do botão Estágios */
+.header-buttons {
+    display: flex;
+    gap: 20px;
+}
+
+/* Estilizando o botão do menu de tema */
 .theme-menu {
     display: none;
     position: absolute;
     top: 60px;
     left: 16px;
-    padding: 24px;
-    background-color: white;
+    padding: 16px;
+    background-color: #fff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     z-index: 1000;
     margin-top: 16px;
+    width: 200px;
+}
+
+.theme-menu select {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #f4f4f4;
+    color: #333;
+    transition: border-color 0.3s ease;
+}
+
+.theme-menu select:focus {
+    border-color: #0066b3;
+    outline: none;
+}
+
+/* Botão para o menu de tema */
+#menu-toggle {
+    font-size: 24px;
+    cursor: pointer;
+    padding: 8px;
+    background-color: #0066B3;
+    color: white;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.3s;
+}
+
+#menu-toggle:hover {
+    background-color: #005bb5;
+}
+
+/* Estilo da nova aba de "Estágios" */
+.abas {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.aba {
+    font-size: 18px;
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: #0066B3;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.aba:hover {
+    background-color: #005bb5;
+}
+
+/* Estilo da área de busca de estágios */
+.estagios-area {
+    display: none;
+    margin-top: 20px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-height: 400px; /* Ajuste o valor conforme necessário para aumentar a altura */
+    overflow-y: auto; /* Permite o scroll quando o conteúdo for maior que a altura definida */
+}
+
+/* Ajuste da altura do título da área de estágios */
+.estagios-area h2 {
+    font-size: 22px;
+    margin-bottom: 12px;
+    margin-left: 10px;
+}
+
+/* Flexbox para o botão de buscar e "Ver todos os estágios" */
+.estagio-busca {
+    display: flex;
+    align-items: center; /* Alinha o botão e o input no centro verticalmente */
+    gap: 10px;
+    width: 100%;
+    position: relative; /* Para posicionar o botão dentro da caixa */
+}
+
+.estagio-busca input {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    flex: 1; /* O input ocupa todo o espaço disponível */
+    padding-right: 80px; /* Espaço para o botão "Buscar" à direita */
+}
+
+.estagio-busca button {
+    position: absolute;
+    right: 0px; /* Mantém o botão alinhado à direita */
+    top: 50%; /* Muda o botão para o meio da caixa */
+    transform: translateY(-50%); /* Ajusta a posição para centralizar verticalmente */
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 16px;
 }
 
 
+.estagio-busca button:hover {
+    background-color: #0056b3;
+}
+
+#ver-todos-estagios {
+    position: absolute; /* Tornando o botão posicionado dentro da área de busca */
+    right: 10px; /* Ajuste esse valor para mover o botão para a direita */
+    top: 30px; /* Ajuste esse valor para mover o botão para cima ou para baixo */
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 16px;
+    display: inline-block;
+}
+
+#ver-todos-estagios:hover {
+    background-color: #0056b3;
+}
+
+
+/* Resultados da busca de estágios */
+.resultados {
+    margin-top: 10px;
+}
+
+.resultados .resultado {
+    background-color: #D3D3D3;
+    color:  #000000;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Temas */
 .default-theme {
     background-color: #f4f4f4;
     color: #333;
@@ -77,19 +273,6 @@ h1 {
 .default-theme .card img {
     filter: brightness(0.9);
 }
-
-
-.lable-nota {
-    padding: 8px;
-    border-radius: 5px;
-    color: white;
-    display: inline-block;
-    text-align: center;
-    font-weight: bold;
-    margin-top: 12px; 
-}
-
-
 
 .dark-theme {
     background-color: #121212;
@@ -140,8 +323,6 @@ h1 {
 .blue-theme .card img {
     filter: brightness(0.8);
 }
-
-
 
 .card {
     min-width: 100%;
@@ -198,6 +379,7 @@ footer {
     padding: 32px 0;
     text-align: center;
 }
+
 .titulo-nota {
     display: flex;
     align-items: center;
@@ -221,6 +403,7 @@ footer {
     font-weight: bold;
     white-space: nowrap;
 }
+
 .aulas {
     padding: 16px;
     margin-bottom: 16px;
@@ -242,4 +425,198 @@ footer {
 .blue-theme .aulas {
     background-color: #3399FF;
     color: white;
+}
+
+
+/* Temas */
+.default-theme {
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.default-theme header, .default-theme footer {
+    background-color: #0066B3;
+}
+
+.default-theme .info {
+    color: #333;
+}
+
+.default-theme .carousel-container {
+    background-color: #fff;
+}
+
+.default-theme .card {
+    background-color: #fff;
+}
+
+.default-theme .card img {
+    filter: brightness(0.9);
+}
+
+.dark-theme {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+.dark-theme header, .dark-theme footer {
+    background-color: #1f1f1f;
+}
+
+.dark-theme .info {
+    color: #e0e0e0;
+}
+
+.dark-theme .carousel-container {
+    background-color: #333;
+}
+
+.dark-theme .card {
+    background-color: #444;
+}
+
+.dark-theme .card img {
+    filter: brightness(1.1);
+}
+
+.blue-theme {
+    background-color: #007BFF;
+    color: white;
+}
+
+.blue-theme header, .blue-theme footer {
+    background-color: #0056b3;
+}
+
+.blue-theme .info {
+    color: #fff;
+}
+
+.blue-theme .carousel-container {
+    background-color: #0056b3;
+}
+
+.blue-theme .card {
+    background-color: #3399FF;
+}
+
+.blue-theme .card img {
+    filter: brightness(0.8);
+}
+
+.card {
+    min-width: 100%;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card img {
+    width: 100%;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+.card .info {
+    margin-top: 12px; 
+}
+
+.carousel-container {
+    position: relative;
+    overflow: hidden;
+    background-color: white;
+    border-radius: 10px;
+    margin: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%; 
+}
+
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+button {
+    position: absolute;
+    top: 30%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+#prevBtn { left: 10px; }
+#nextBtn { right: 10px; }
+
+footer {
+    padding: 32px 0;
+    text-align: center;
+}
+
+.titulo-nota {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.titulo-evento {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+    flex: 1;
+    text-align: left;
+}
+
+.lable-nota {
+    padding: 6px 12px;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.aulas {
+    padding: 16px;
+    margin-bottom: 16px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.05);
+}
+
+.default-theme .aulas {
+    background-color: #fff;
+    color: #333;
+}
+
+.dark-theme .aulas {
+    background-color: #1f1f1f;
+    color: #e0e0e0;
+}
+
+.blue-theme .aulas {
+    background-color: #3399FF;
+    color: white;
+}
+.saiba-mais-btn {
+    display: inline-block;
+    background-color: #007BFF;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+.saiba-mais-btn:hover {
+    background-color: #0056b3;
 }
