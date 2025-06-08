@@ -14,25 +14,24 @@ body {
 }
 
 header {
-    padding: 16px;
+    padding: 32px;
     background-color: #0066B3;
     color: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 16px;
+    gap: 24px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
-    font-size: 20px;
+    font-size: 24px;
 }
 
-/* Ajuste dos ícones */
 .icon {
     font-family: 'Material Icons Outlined';
-    font-size: 20px;
+    font-size: 24px;
     color: inherit;
     display: inline-block;
     vertical-align: middle;
@@ -139,6 +138,8 @@ h1 {
 /* Flexbox para o botão de buscar e "Ver todos os estágios" */
 .estagio-busca {
     display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center; /* Alinha o botão e o input no centro verticalmente */
     gap: 10px;
     width: 100%;
@@ -146,29 +147,64 @@ h1 {
 }
 
 .estagio-busca input {
-    padding: 12px;
+    padding: 10px;
     font-size: 16px;
     border-radius: 5px;
     border: 1px solid #ccc;
-    flex: 1;
+    flex: 1; /* O input ocupa todo o espaço disponível */
+    padding-right: 80px; /* Espaço para o botão "Buscar" à direita */
 }
 
 .estagio-busca button {
+    position: absolute;
+    right: 0px; /* Mantém o botão alinhado à direita */
+    top: 50%; /* Muda o botão para o meio da caixa */
+    transform: translateY(-50%); /* Ajusta a posição para centralizar verticalmente */
     padding: 10px 20px;
     background-color: #007BFF;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 16px;
+}
+
+.estagio-busca button:hover {
+    background-color: #0056b3;
 }
 
 #ver-todos-estagios {
+    position: absolute; /* Tornando o botão posicionado dentro da área de busca */
+    right: 10px; /* Ajuste esse valor para mover o botão para a direita */
+    top: 30px; /* Ajuste esse valor para mover o botão para cima ou para baixo */
     padding: 10px 20px;
     background-color: #007BFF;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 16px;
+    display: inline-block;
+}
+
+#ver-todos-estagios:hover {
+    background-color: #0056b3;
+}
+
+/* Resultados da busca de estágios */
+.resultados {
+    margin-top: 10px;
+}
+
+.resultados .resultado {
+    background-color: #D3D3D3;
+    color:  #000000;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 /* Botão "Saiba Mais" */
@@ -185,20 +221,6 @@ h1 {
 
 .saiba-mais-btn:hover {
     background-color: #0056b3;
-}
-
-/* Resultados da busca de estágios */
-.resultados {
-    margin-top: 10px;
-}
-
-.resultados .resultado {
-    background-color: #D3D3D3;
-    color:  #000000;
-    padding: 10px;
-    margin-bottom: 10px;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 /* Temas */
